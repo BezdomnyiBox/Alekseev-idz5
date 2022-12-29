@@ -1,0 +1,38 @@
+mixin a(href, name)
+	a(class!=attributes.class href=href)= name
+
+mixin createMenu (idPage)
+	if idPage == 0
+		+a('index.html', 'CSS')(class = "selected")
+		+a('#', 'Синтаксис CSS')
+		+a('#', 'Вставка CSS')
+		+a('#', 'CSS текст')
+		+a('index-2.html', 'CSS шрифт')
+		+a('index-3.html', 'Блоки')
+	if idPage == 1
+		+a('index.html', 'CSS')
+		+a('#', 'Синтаксис CSS')
+		+a('#', 'Вставка CSS')
+		+a('#', 'CSS текст')
+		+a('index-2.html', 'CSS шрифт')(class = "selected")
+		+a('index-3.html', 'Блоки')
+	if idPage == 2
+		+a('index.html', 'CSS')
+		+a('#', 'Синтаксис CSS')
+		+a('#', 'Вставка CSS')
+		+a('#', 'CSS текст')
+		+a('index-2.html', 'CSS шрифт')
+		+a('index-3.html', 'Блоки')(class = "selected")
+
+<!DOCTYPE html>
+html
+	head
+		include headCode
+
+	body
+		.menu 
+			.nav 
+				block menu			
+		
+		block content
+

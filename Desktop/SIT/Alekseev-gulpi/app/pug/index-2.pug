@@ -1,0 +1,32 @@
+extends template
+
+block menu
+	+createMenu(1)
+
+block content
+	.main-block 
+		.content2 
+			.image2
+				img(src='img/css-text-decoration.png')
+				img(src='img/css-probely.png')
+				img(src='img/css-text.png')
+			.text3 
+				p. 
+					font - универсальное свойство, которое позволяет одновременно 
+					задать несколько характеристик шрифта и текста.			
+				.noInd 
+					p.					
+						Его синтаксис font: [font-style||font-variant||font-weight] 
+						font-size [/line-height] font-family
+			.text4
+				p. 
+					font-style - определяет начертание шрифта: обычное, курсивное 
+					или наклонное. Когда для текста установлено курсивное или наклонное 
+					начертание, браузер обращается к системе для поиска подходящего 
+					шрифта. Если заданный шрифт не найден, браузер использует специальный 
+					алгоритм для имитации нужного вида текста. Результат и качество 
+					при этом могут получиться неудовлетворительными, особенно при 
+					печати документа.
+				.noInd 
+					p.		
+						Его синтаксис font-style: normal | italic | oblique | inherit

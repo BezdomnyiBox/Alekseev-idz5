@@ -1,0 +1,223 @@
+main-bg-color = #164B69 
+block-bg-color = #E3E3E3
+selected-bg-color = #DCDCDC
+
+max-wid = 600px
+
+marg(size, col)
+	margin size
+	padding col	
+
+html 
+	background-color: main-bg-color
+	p 
+		font-family: "Arial"
+		font-size: 14px
+		text-align: justify
+		line-height: 2
+		text-indent: 40px
+		word-spacing: 10px
+head
+body
+	background-color: main-bg-color
+	marg(20px, 0px)
+
+	div 
+		height: auto
+		width: auto 
+		marg(0px, 2px)
+
+	a
+		display: inline-block
+
+	.menu, .nav, .main-block, .content, .text1, .text2, .image, .video
+		//border: solid 1px black 
+
+	.menu
+		background-color: block-bg-color 
+		font-weight: bold
+		
+	.selected
+		background-color: selected-bg-color	
+
+	.nav
+		display: grid
+		background-color: inherit 
+		grid-template-rows: max-content 
+		grid-template-columns: repeat(6, max-content)
+		justify-content: center
+		a
+			display: grid
+			padding: 5px 20px
+			margin: 3px
+			color: black
+	
+			&:hover
+				background-color: selected-bg-color
+				text-decoration: none
+
+	@media (max-width: max-wid)
+		.nav
+			grid-template-rows: repeat(3, auto)
+			grid-template-columns: repeat(2, auto)
+			text-align: left
+	
+	.main-block 
+		width: 5px auto
+		marg(0px, 15px)
+		background-color: block-bg-color
+
+	.content, .text1, .text2, .image
+		display: grid
+		background-color: inherit 
+
+	.content
+		grid-template-rows: repeat(max-content, 2)
+		grid-template-columns: 1fr max-content 
+
+	.text1
+		grid-column: 1/3
+
+	.text2
+		grid-row: 2
+		grid-column: 1
+
+	.image
+		grid-row: 2
+		grid-column: 2
+		img
+			margin: auto 10px
+			
+	.video
+		marg(0px, 10px)
+		padding-bottom: 5px
+		iframe
+			//width="893" height="670" 
+			display: block
+			margin: auto
+			$wid = 1vw * 100 * (2 / 3)
+			width: $wid 
+			height: 1vw * (($wid * 670)/893)
+	
+
+	@media (max-width: max-wid)
+		p 
+			font-size: 16px
+			line-height: 1.7
+
+		.content, .text1, .text2, .image
+			box-sizing: border-box
+
+		.content
+			grid-template-rows: repeat(auto, 3)
+			grid-template-columns: auto 
+
+		.image
+			grid-row: 2
+			grid-column: 1
+			margin 5px
+			img
+				margin: auto 
+
+		.text1
+			grid-row: 1
+			grid-column: 1
+			margin 5px
+
+		.text2
+			grid-row: 3
+			grid-column: 1
+			margin 5px
+
+		.video iframe
+			$wid = 1vw * 86
+			width: $wid 
+			height: 1vw * (($wid * 670)/893)
+	
+	// Page 2:
+
+	.content2, .image2, .text3, .text4, img
+		//border: solid 1px black 
+
+	.content2, .image2, .text3, .text4
+		display grid
+
+	.content2 
+		grid-template-rows: repeat(auto, 3)
+		grid-template-columns: auto 
+
+	.image2
+		display flex
+		flex-direction row
+		width 100%
+		text-align center
+		margin 15px 0px
+		&-item
+			width 33.33%
+			
+		img
+			margin: 10px auto
+
+	.noInd
+		p
+			text-indent: 0px
+
+	.text3
+		grid-row: 2
+		grid-column: 1
+
+	.text4
+		grid-row: 3
+		grid-column: 1
+
+	@media (max-width: max-wid)
+		.image2	
+			display: block
+			width: 80%
+			margin: auto
+			img				
+				display: block
+				width: 100%
+				margin: 20px auto
+	
+	// Page 3
+
+	.content3, .img1, .img2, .img3, .img4, .img5, .img6, .img7
+		display: grid
+		//border: solid 1px black 
+		object-fit: fill;
+
+	.content3
+		display: grid
+		grid-template-rows: 300px 300px 500px
+		grid-template-columns: 1fr 1fr 1fr
+		grid-template-areas: 
+		"A B B"	"C C D"	"E F G"
+	img
+		padding: 10px
+		margin: auto
+		height: 100%
+		width: 100%
+		object-fit: fill;
+		overflow: hidden		
+
+	.img1
+		grid-area: A
+
+	.img2
+		grid-area: B
+
+	.img3
+		grid-area: C
+
+	.img4
+		grid-area: D
+
+	.img5
+		grid-area: E
+
+	.img6
+		grid-area: F
+
+	.img7
+		grid-area: G
